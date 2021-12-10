@@ -1,0 +1,26 @@
+body{
+  background-repeat: no-repeat;
+    background-size: cover;
+}
+#loading{
+    width: 6rem;
+    height: 6rem;
+    border: 8px solid #f3f3f3;
+    border-top: 6px solid darkred;
+    border-radius: 100%;
+    margin: auto;
+    visibility: hidden;
+    animation: spin 1s infinite linear;
+}
+#loading.display{
+    /*display: none;*/
+    visibility: visible;
+}
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
