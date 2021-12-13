@@ -3,7 +3,7 @@ body{
 }
 #main{
     padding: 20px;
-    transition: margin-left .5s ease;
+    transition: margin-left .5s;
 }
 .loader-wrapper{
     position: absolute;
@@ -32,36 +32,38 @@ label{
     vertical-align: middle;
     animation: loader-inner 5s infinite ease-in;
 }
-.sidenav{
+.mySidenav{
     height: 100%;
     width: 0;
     top: 0;
     left: 0;
-    padding-top: 0;
+    padding-top: 60px;
     position: fixed;
     background-color: black;
     z-index: 1;
 /*    how to stay on top */
     overflow-x: hidden;
-
+    transition: 0.5s;
 }
 
 .sidenav a{
     font-size: 26px;
-    color: dimgrey;
+    color: #818181;
+    transition: 0.3s;
     display: block;
     text-decoration: none;
-    padding: 6px 6px 6px 6px;
+    padding: 6px 6px 6px 32px;
 }
 .sidenav a:hover{
     color: antiquewhite;
+
 }
 .sidenav .closebtn{
     top: 0;
     position: absolute;
-    right: 20px;
+    right: 25px;
     font-size: 33px;
-    margin-left: 40px;
+    margin-left: 50px;
 }
 @keyframes loader-inner {
 0%{height: 0%;}
@@ -79,7 +81,7 @@ label{
         transform: rotate(360deg);
     }
 }
-@media screen and (max-width: 600px){
+@media screen and (max-width: 500px){
     .logo{
         height: 100%;
         width: 100%;
@@ -89,7 +91,7 @@ label{
         padding-top: 15px;
     }
     .sidenav a{
-        font-size: 25px;
+        font-size: 18px;
     }
 
 
