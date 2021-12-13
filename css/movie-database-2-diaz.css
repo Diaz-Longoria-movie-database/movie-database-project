@@ -32,7 +32,7 @@ label{
     vertical-align: middle;
     animation: loader-inner 5s infinite ease-in;
 }
-.mySidenav{
+.sidenav{
     height: 100%;
     width: 0;
     top: 0;
