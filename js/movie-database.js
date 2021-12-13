@@ -1,4 +1,7 @@
-const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
+
+// const API_URL = 'https://slash-honorable-moustache.glitch.me';
+
+
 //
 // getMovies(API_URL);
 // function getMovies(url){
@@ -26,6 +29,7 @@ const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
 // </div>`
 //     })
 // }
+
 
     const textInput = document.querySelector("#search");
     const textOutput = document.querySelector("#showOutPut");
