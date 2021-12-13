@@ -59,7 +59,7 @@ function addMovies(){
          }
      fetch(url, options)
         .then(res => getMovieData())
-         .catch(err => console.error(error));
+         .catch(error => console.error(error));
 
 $('#submitInput').on('click', function(e){
     e.preventDefault()
