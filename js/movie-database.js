@@ -1,3 +1,4 @@
+ 
 // const API_URL = 'https://slash-honorable-moustache.glitch.me';
 
 
@@ -60,9 +61,11 @@ $(window).load(function() {
     console.log(movies)
 })();
 
+ 
 const textInput = document.querySelector("#search");
 const textOutput = document.querySelector("#showOutPut");
 const btn = document.querySelector("#submitInput");
+ 
 
 btn.addEventListener("click", fetchHandler);
 
