@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/movie-database.css">
+    <link rel="stylesheet" href="css/movie-database.css">
 </head>
 <body style="background-image: url('images/theatre.jfif'); color: lightgrey; margin: 30px; background-color: black">
 
@@ -27,6 +27,7 @@
 <!--<form style="text-align: center">-->
 <!--    Create a form for adding a new movie that has fields for the movie's title and rating-->
 <!--</form>-->
+ 
 
 <table id="movies">
     <!--    <thead>-->
@@ -43,38 +44,45 @@
     <tbody id="insertMovies"></tbody>
 </table>
 
-        <nav>
+<nav>
 
 
-        </nav>
+</nav>
 
 <h3 style="color: lightgrey; margin-left: 30px">Create New Movie</h3>
-
-    <div class="container">
-
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart" placeholder="Input Movie Title.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart1" placeholder="Input Actors.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart2" placeholder="Input Director.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart3" placeholder="Input Genre.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart4" placeholder="Input ID.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart5" placeholder="Input Plot.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart6" placeholder="Input Poster.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart7" placeholder="Input Rating.."></textarea><br>
-        <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart8" placeholder="Input Title.."></textarea><br>
-
-<!--        <label for="inputPart"></label><textarea id="inputPart" placeholder="Enter dummy data.."></textarea>-->
-        
-
-
-        <button id="submitInput">Submit</button>
-        <div id="loading" >
-
-        </div>
-        <h1 id="showOutput"></h1>
+<div class="movie-form">
+<div class="form-group row">
+    <div class="col-6">
+        <form>
+        <label for="title"></label>
+        </form>
     </div>
-<div id="cards" class="container-fluid body-cards row gap-5 justify-content-center"></div>
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart" placeholder="Input Movie Title.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart1" placeholder="Input Actors.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart2" placeholder="Input Director.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart3" placeholder="Input Genre.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart4" placeholder="Input ID.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart5" placeholder="Input Plot.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart6" placeholder="Input Poster.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart7" placeholder="Input Rating.."></textarea><br>-->
+<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart8" placeholder="Input Title.."></textarea><br>-->
 
+    <!--        <label for="inputPart"></label><textarea id="inputPart" placeholder="Enter dummy data.."></textarea>-->
+
+ 
+
+    <button id="submitInput">Submit</button>
+    <div id="loading" >
+</div>
+    </div>
+    <h1 id="showOutput"></h1>
+</div>
+<div id="cards" class="container-fluid body-cards row gap-5 justify-content-center"></div>
+ 
+<div style="text-align: center"><button onClick="window.location.reload();">Refresh Page</button></div>
+ 
 <div align="center"><button onClick="window.location.reload();">Refresh Page</button></div>
+ 
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -83,7 +91,7 @@
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/movie-database.js"></script>
-
+ 
 <script>
     $(window).load(function() {
         $('#loading').hide();
@@ -124,6 +132,7 @@
 
 
 </script>
+ 
 
 
 
