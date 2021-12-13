@@ -40,7 +40,7 @@ function addMovies(){
     let movieGenre = $('#genre').val()
     let movieActors = $('#Actors').val()
     let moviePoster = $('#poster').val()
- }
+ 
     let newMovie = {
        title: movieTitle,
         rating: movieRating,
@@ -95,3 +95,4 @@ $('#submitInput').on('click', function(e){
     fetch(url + `/${id}`, options)
         .then(res => getMovieData())
     }
+}
