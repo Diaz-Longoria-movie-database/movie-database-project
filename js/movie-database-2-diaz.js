@@ -1,6 +1,20 @@
 const url = 'https://slash-honorable-moustache.glitch.me/movies';
 
+
+// let getAllMovies = () => {
+//     return fetch(url).then(resp => resp.json());
+// }
+//
+// getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
+// $(window).load(function() {
+//     $('#loading').hide();
+// });
+
 function getMovieData(){
+    function appendAllMovieData(data) {
+        
+    }
+
     fetch("https://slash-honorable-moustache.glitch.me/movies")
         .then(response => {
             response.json()
@@ -12,9 +26,9 @@ function getMovieData(){
                 })
         })
 }
-$(window)
-.on("load", function(){
+$(window).on("load", function(){
     $(".loader-wrapper")
+    //    .fadeIn('slow');
     getMovieData();
 });
 
@@ -28,7 +42,7 @@ function addMovies(){
     let moviePoster = $('#poster').val()
  }
     let newMovie = {
-    title: movieTitle,
+       title: movieTitle,
         rating: movieRating,
         year: movieYear,
         genre: movieGenre,
@@ -45,9 +59,9 @@ function addMovies(){
          }
      fetch(url, options)
         .then(res => getMovieData())
+         .catch(err => console.error(error));
 
-$('#submitInput')
-.on('click', function(e){
+$('#submitInput').on('click', function(e){
     e.preventDefault()
     addMovies()
 })
@@ -62,7 +76,7 @@ $('#submitInput')
         let entries = Object.entries(newMovie)
         let filteredMovieEntries = entries.filter(([k, v]) => !!v)
 
-        newMovie = Object.fromMovieEntries(filteredMovieEntries)
+        newMovie = Object.fromEntries(filteredMovieEntries)
         let options = {
             method: 'PATCH',
             headers: {
