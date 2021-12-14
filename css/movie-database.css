@@ -2,6 +2,12 @@ body{
   background-repeat: no-repeat;
     background-size: 90em;
 }
+h2{
+  font-size: 3em;
+    font-style: italic;
+    color: darkred;
+    text-outline: 11em yellow;
+}
 #loading{
     width: 6rem;
     height: 6rem;
