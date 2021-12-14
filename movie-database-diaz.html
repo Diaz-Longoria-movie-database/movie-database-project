@@ -27,7 +27,7 @@
 <!--<form style="text-align: center">-->
 <!--    Create a form for adding a new movie that has fields for the movie's title and rating-->
 <!--</form>-->
- 
+
 
 <table id="movies">
     <!--    <thead>-->
@@ -65,7 +65,7 @@
 
     <!--        <label for="inputPart"></label><textarea id="inputPart" placeholder="Enter dummy data.."></textarea>-->
 
- 
+
 
     <button id="submitInput">Submit</button>
     <div id="loading" >
@@ -74,44 +74,28 @@
     <h1 id="showOutput"></h1>
 </div>
 <div id="cards" class="container-fluid body-cards row gap-5 justify-content-center"></div>
-<<<<<<< HEAD
-
-<div align="center"><button onClick="window.location.reload();">Refresh Page</button></div>
-=======
- 
-<div style="text-align: center"><button onClick="window.location.reload();">Refresh Page</button></div>
- 
-<div align="center"><button onClick="window.location.reload();">Refresh Page</button></div>
- 
->>>>>>> 4ea00a5ff086086902784d3e3612df2a6bc233ce
-
-
+ <div style="text-align: center"><button onClick="window.location.reload();">Refresh Page</button></div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/movie-database.js"></script>
-<<<<<<< HEAD
 
-=======
- 
->>>>>>> 4ea00a5ff086086902784d3e3612df2a6bc233ce
-<script>
-    $(window).load(function() {
-        $('#loading').hide();
-    });
-</script>
+<!--<script>-->
+<!--    $(window).load(function() {-->
+<!--        $('#loading').hide();-->
+<!--    });-->
+
 <script>
 
-    const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
+     const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
     //get request
 
-    let getAllMovies = () => {
-        return fetch(API_URL).then(resp => resp.json());
-    }
+    // let getAllMovies = () => {
+    //     return fetch(API_URL).then(resp => resp.json());
+    // }
 
-    getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
+    // getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
 
     (function() {
 
@@ -137,12 +121,10 @@
 
 
 </script>
-<<<<<<< HEAD
-=======
- 
->>>>>>> 4ea00a5ff086086902784d3e3612df2a6bc233ce
+
 
 
 
 </body>
 </html>
+
