@@ -1,6 +1,6 @@
 body{
   background-repeat: no-repeat;
-    background-size: 84em;
+    background-size: 90em;
 }
 h2{
   font-size: 3em;
@@ -29,4 +29,31 @@ h2{
     to{
         transform: rotate(360deg);
     }
+}
+
+/* Container needed to position the button. Adjust the width as needed */
+/*.container {*/
+
+/*    position: relative;*/
+/*    width: 50%;*/
+/*}*/
+
+/*!* Make the image responsive *!*/
+/*.container img {*/
+/*    width: 150px;*/
+/*    height: 250px;*/
+/*}*/
+
+/* Style the button and place it in the middle of the container/image */
+.btn {
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: black;
 }
