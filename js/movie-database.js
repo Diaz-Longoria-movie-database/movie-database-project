@@ -88,52 +88,34 @@ form2.addEventListener('submit',function(event){
 //     })
 //
 // }
-//
-//
-// function showMovies(data){
-//
-//     data.forEach(movie =>{
-//         const movieEl = document.createElement('div');
-//         movieEl.classList.add('movie');
-//         movieEl.innerHTML = `
-//         <img src="" alt="image">
-// <div class="movie-info">
-//     <h3>Movie Title</h3>
-//     <span class="green">9.8</span>
-// </div>
-// <div class="overview">
-//     <h3>Overview</h3>
-//     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur cum eos, fuga neque nulla perspiciatis sunt tempora. Aliquam consequuntur deleniti esse natus possimus quasi repellat rerum veniam veritatis voluptas.
-// </div>`
-//     })
-// }
-const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
+
+const url = 'https://slash-honorable-moustache.glitch.me/movies';
 //get request
 
 
 let getAllMovies = () => {
-    return fetch(API_URL).then(resp => resp.json());
+    return fetch(url).then(resp => resp.json());
 }
 
 getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
-$(window).load(function() {
-    $('#loading').hide();
-});
+// $(window).load(function() {
+//     $('#loading').hide();
+// });
 (function() {
 
     $.get('https://slash-honorable-moustache.glitch.me/movies').done(function (movies) {
         $("#insertMovies").html("");
         movies.forEach(function(movie) {
-            var h1 = "<h1>" + movie.title + "</h1>"
-            var p = "<p>Actors: " + movie.actors + "</p>"
-            var p1 = "<p>Director: " + movie.director + "</p>"
-            var c = "<p>Genre: " + movie.genre + "</p>"
-            var c1 = "<p>ID: " + movie.id + "</p>"
-            var span = "<p>Plot: " + movie.plot + "</p>"
-            var span1 = "<p>Poster: " + movie.poster + "</p>"
-            var span2 = "<p>Rating: " + movie.rating + "</p>"
-            var span3 = "<p>Title: " + movie.title + "</p>"
-            var span4 = "<p>Year: " + movie.year + "</p>"
+            let h1 = "<h1>" + movie.title + "</h1>"
+            let p = "<p>Actors: " + movie.actors + "</p>"
+            let p1 = "<p>Director: " + movie.director + "</p>"
+            let c = "<p>Genre: " + movie.genre + "</p>"
+            let c1 = "<p>ID: " + movie.id + "</p>"
+            let span = "<p>Plot: " + movie.plot + "</p>"
+            let span1 = "<p>Poster: " + movie.poster + "</p>"
+            let span2 = "<p>Rating: " + movie.rating + "</p>"
+            let span3 = "<p>Title: " + movie.title + "</p>"
+            let span4 = "<p>Year: " + movie.year + "</p>"
             $("#movies").append(h1.toUpperCase() + p + p1 + c + c1+ span + span1 + span2 + span3 + span4);
         });
     });
