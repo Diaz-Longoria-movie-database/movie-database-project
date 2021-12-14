@@ -1,22 +1,48 @@
 const url = 'https://slash-honorable-moustache.glitch.me/movies';
+const searchURL = url + '/search/movie?';
 
-function getMovieData(){
-    fetch("https://slash-honorable-moustache.glitch.me/movies")
-        .then(response => {
-            response.json()
-                .then(data =>{
-                    $(".movie-container")
-                        .empty()
-                    appendAllMovieData(data)
-                    console.log(data)
-                })
-        })
+
+
+
+
+let getAllMovies = () => {
+    return fetch(searchURL).then(resp => resp.json());
 }
-$(window).on("load", function(){
-    $(".loader-wrapper")
-        .fadeOut('slow');
-    getMovieData();
+
+getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
+$(window).load(function() {
+    $('#loading').hide();
 });
+
+function getMovieData(url){
+
+
+    function showMovies(results) {
+}
+    fetch("https://slash-honorable-moustache.glitch.me/movies")
+        .then(response => response.json())
+                .then(data => {
+                    console.log(data.results)
+                    showMovies(data.results);
+                })
+        }
+// $(window).on("load", function(){
+//     $(".loader-wrapper")
+//     //    .fadeIn('slow');
+//     getMovieData();
+// });
+
+/** need a movie api for images, easier?*/
+// function showMovies(data){
+//     main.innerHTML = '';
+//     data.forEach(movie=>{
+//         const{title, poster_path, vote_average, overview} = movie;
+//         const movieEl = document.createElement('div');
+//         movieEl.classList.add('movie');
+//         movieEl.innerHTML = `
+//         <img src="${IMG"`;
+//     })
+// }
 
 function addMovies(){
     let movieTitle = $('#title').val()
@@ -26,9 +52,9 @@ function addMovies(){
     let movieGenre = $('#genre').val()
     let movieActors = $('#Actors').val()
     let moviePoster = $('#poster').val()
- }
+
     let newMovie = {
-    title: movieTitle,
+       title: movieTitle,
         rating: movieRating,
         year: movieYear,
         genre: movieGenre,
@@ -36,6 +62,7 @@ function addMovies(){
         actors: movieActors,
         poster: moviePoster
     }
+
  const options = {
     method: 'POST',
      headers: {
@@ -45,11 +72,11 @@ function addMovies(){
          }
      fetch(url, options)
         .then(res => getMovieData())
+         .catch(error => console.error(error));
 
-$('#submitInput')
-.on('click', function(e){
-    e.preventDefault()
-    addMovies()
+    $('#submitInput').on('click', function(e){
+        e.preventDefault()
+        addMovies()
 })
 
     function editMovie(id) {
@@ -62,7 +89,7 @@ $('#submitInput')
         let entries = Object.entries(newMovie)
         let filteredMovieEntries = entries.filter(([k, v]) => !!v)
 
-        newMovie = Object.fromMovieEntries(filteredMovieEntries)
+        newMovie = Object.fromEntries(filteredMovieEntries)
         let options = {
             method: 'PATCH',
             headers: {
@@ -81,3 +108,4 @@ $('#submitInput')
     fetch(url + `/${id}`, options)
         .then(res => getMovieData())
     }
+}

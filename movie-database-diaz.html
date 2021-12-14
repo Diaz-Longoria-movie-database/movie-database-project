@@ -49,22 +49,18 @@
 </nav>
 
 <h3 style="color: lightgrey; margin-left: 30px">Create New Movie</h3>
-<div class="movie-form">
-<div class="form-group row">
-    <div class="col-6">
-        <form>
-        <label for="title"></label>
-        </form>
-    </div>
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart" placeholder="Input Movie Title.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart1" placeholder="Input Actors.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart2" placeholder="Input Director.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart3" placeholder="Input Genre.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart4" placeholder="Input ID.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart5" placeholder="Input Plot.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart6" placeholder="Input Poster.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart7" placeholder="Input Rating.."></textarea><br>-->
-<!--    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart8" placeholder="Input Title.."></textarea><br>-->
+
+<div class="container">
+
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart" placeholder="Input Movie Title.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart1" placeholder="Input Actors.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart2" placeholder="Input Director.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart3" placeholder="Input Genre.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart4" placeholder="Input ID.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart5" placeholder="Input Plot.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart6" placeholder="Input Poster.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart7" placeholder="Input Rating.."></textarea><br>
+    <label for="inputPart"></label><textarea style="height: 30px; text-align: center" id="inputPart8" placeholder="Input Title.."></textarea><br>
 
     <!--        <label for="inputPart"></label><textarea id="inputPart" placeholder="Enter dummy data.."></textarea>-->
 
@@ -72,13 +68,13 @@
 
     <button id="submitInput">Submit</button>
     <div id="loading" >
-</div>
+
     </div>
     <h1 id="showOutput"></h1>
 </div>
 <div id="cards" class="container-fluid body-cards row gap-5 justify-content-center"></div>
 
-<div style="text-align: center"><button onClick="window.location.reload();">Refresh Page</button></div>
+<div align="center"><button onClick="window.location.reload();">Refresh Page</button></div>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -88,7 +84,46 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/movie-database.js"></script>
 
+<script>
+    $(window).load(function() {
+        $('#loading').hide();
+    });
+</script>
+<script>
 
+    const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
+    //get request
+
+    let getAllMovies = () => {
+        return fetch(API_URL).then(resp => resp.json());
+    }
+
+    getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
+
+    (function() {
+
+        $.get('https://slash-honorable-moustache.glitch.me/movies').done(function (movies) {
+            $("#insertMovies").html("");
+            movies.forEach(function(movie) {
+                var h1 = "<h1>" + movie.title + "</h1>"
+                var p = "<p>Actors: " + movie.actors + "</p>"
+                var p1 = "<p>Director: " + movie.director + "</p>"
+                var c = "<p>Genre: " + movie.genre + "</p>"
+                var c1 = "<p>ID: " + movie.id + "</p>"
+                var span = "<p>Plot: " + movie.plot + "</p>"
+                var span1 = "<p>Poster: " + movie.poster + "</p>"
+                var span2 = "<p>Rating: " + movie.rating + "</p>"
+                var span3 = "<p>Title: " + movie.title + "</p>"
+                var span4 = "<p>Year: " + movie.year + "</p>"
+                $("#movies").append(h1.toUpperCase() + p + p1 + c + c1+ span + span1 + span2 + span3 + span4);
+            });
+        });
+        console.log(movies)
+    })();
+
+
+
+</script>
 
 
 
