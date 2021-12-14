@@ -91,11 +91,18 @@
      const API_URL = 'https://slash-honorable-moustache.glitch.me/movies';
     //get request
 
-    // let getAllMovies = () => {
-    //     return fetch(API_URL).then(resp => resp.json());
-    // }
+ 
+    let getAllMovies = () => {
+        return fetch(API_URL).then(resp => resp.json());
+    }
+// Movie by id
+    let getMovieById = (id) => {
+        return fetch(`${API_URL}/${id}`).then(resp => resp.json())
+    }
+    getMovieById(5).then(data=>console.log(data)).catch(err => console.error(err));
+//
+    getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
 
-    // getAllMovies().then(data => console.log(data)).catch(error => console.error(error));
 
     (function() {
 
