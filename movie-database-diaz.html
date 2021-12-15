@@ -31,13 +31,13 @@
 
     <br>
 
-
-
-<!--    <form id="form" style="text-align: center">-->
-<!--        <input type="text" name="search" id="searchMovie" placeholder="Search Movie Details" class="form-control">-->
-<!--        <br>-->
-<!--        <button type="submit" id="submitSearch2">Submit</button>-->
-<!--    </form>
+ 
+    <!--    <form id="form" style="text-align: center">-->
+    <!--        <input type="text" name="search" id="searchMovie" placeholder="Search Movie Details" class="form-control">-->
+    <!--        <br>-->
+    <!--        <button type="submit" id="submitSearch2">Submit</button>-->
+    <!--    </form>-->
+ 
 
 
     <div style="text-align: center">
@@ -89,6 +89,7 @@
 </table>
 <br><br>
 <table id="movies" style="visibility: collapse">
+ 
 
 
 
@@ -114,6 +115,7 @@
     </nav>
 
 
+ 
     <h3 style="color: lightgrey; margin-left: -10px">Create New Movie</h3>
 
 
@@ -164,11 +166,13 @@
 
             <script>
                 $(document).ready(function(){
+
 //when the user click on this button
                     $("#submitSearch").click(function(){
 //call the ajax here
                         $.get("https://polyester-able-helium.glitch.me/movies",function(data,status){
 //just display in console log data
+ 
                             //parse this in json
                             console.log(JSON.parse(data));
                             var data=JSON.parse(data);
@@ -187,6 +191,7 @@
                             });
                         });
                     });
+ 
                 });
             </script>
             <script>
@@ -225,6 +230,8 @@
 
             </script>
 
+ 
+ 
 
 
 
